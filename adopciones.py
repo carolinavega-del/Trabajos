@@ -10,31 +10,15 @@ BASE_DIR = os.path.dirname(__file__)
 NOMBRE_ARCHIVO = os.path.join(BASE_DIR, "datos", "adopciones.json")
 
 
-#funciones de persistencias
-#---------------------------------------------------------------------
-
-# Abrir adopciones.json
-# ↓
-# Leer su contenido
-# ↓
-# Convertir el JSON en una lista de Python
-# ↓
-# Devolver esa lista
 def leer_archivo(nombre_archivo):
-    #evitamos que explote si el archivo no existe con el if
-    if os.path.exists(nombre_archivo):
+        if os.path.exists(nombre_archivo):
         with open(nombre_archivo,"rt",encoding="UTF-8") as archivo:
             datos= json.load(archivo)
             return datos
     else:
         return []
     
-#     Lista Python
-# ↓
-# guardar_archivo()
-# ↓
-# JSON
-#datos va a ser la lista de adopciones que quiero guardar 
+
 def guardar_archivo(nombre_archivo,datos):
      with open(nombre_archivo, "w", encoding="UTF-8") as archivo:
          #indent=5 es para que el json no quede todo junto, ensure corrige correctamnete las ñ y las tilde
@@ -42,16 +26,6 @@ def guardar_archivo(nombre_archivo,datos):
     
     
 
-
-
-# funciones del modulo 
-
-# Si la lista está vacía → 1
-
-# Si no está vacía →
-# tomar la última adopción
-# obtener su id
-# sumar 1
 def generar_id_adopcion(adopciones):
     if not adopciones:
         return 1 
@@ -81,11 +55,6 @@ def cargar_adopcion():
     exito("Adopción registrada correctamente.")
 
 
-
-# # 5.Recorrer la lista adopciones
-# ↓
-# Mostrar cada adopción
-
 def listar_adopciones():
     adopciones=leer_archivo(NOMBRE_ARCHIVO)
     if not adopciones:
@@ -100,18 +69,7 @@ def listar_adopciones():
      print("Estado: " ,adopcion["estado"])
      print()
         
-    
-    
-# Recorrer todas las adopciones
-# ↓
-# ¿El id_adoptante coincide?
-# ↓
-# Sí → devolver la adopción
-# ↓
-# No → seguir buscando
-# ↓
-# Terminó la lista → devolver None
-#esta funcion no deberia de devolver ningun mensaje ya que lo hace la funcion que llama a esta 
+
 def  buscar_adopcion_animal(adopciones,id_animal):
   
     for adopcion in adopciones:
@@ -120,12 +78,6 @@ def  buscar_adopcion_animal(adopciones,id_animal):
             
     return None
 
-
-
-# leen el JSON
-# piden datos al usuario
-# llaman a la función de búsqueda
-# muestran el resultado
 
 def buscar_por_animal():
     adopciones = leer_archivo(NOMBRE_ARCHIVO)
@@ -159,16 +111,7 @@ def buscar_por_familia():
 
     print(adopcion)
 
-# Pedir ID del animal
-# ↓
-# Buscar la adopción
-# ↓
-# ¿Existe?
-#     Sí:
-#         Pedir la nota
-#         Agregarla a la lista seguimientos
-#     No:
-#         Mostrar mensaje
+
 def agregar_seguimiento():
 
     id_animal = validar_entero("Ingrese el ID del animal: ")
@@ -191,34 +134,7 @@ def agregar_seguimiento():
             return
 
     print("La adopcion no esta registrada")
-    #  id_animal=int(input("Ingrese el ID del animal: "))
-    #  adopciones=leer_archivo(NOMBRE_ARCHIVO)
-     
-    #  #la variable adopcion ahora va a contener el diccionario del idanimal completo si lo encontro si no NONE
-    #  adopcion=buscar_adopcion_animal(id_animal)
-    #  if not adopcion:
-    #     print ("La adopcion no esta registrada")
-    #     return
-    
-    #  nota =input("Ingrese el seguimiento: ")
-    #  adopcion["seguimientos"].append(nota)
-    #  guardar_archivo(NOMBRE_ARCHIVO, adopciones)
-    #  print("Seguimiento agregado correctamente")
-     
 
-# Pedir ID del animal
-# ↓
-# Leer JSON
-# ↓
-# Buscar adopción
-# ↓
-# ¿Existe?
-#     No → mensaje
-#     Sí → cambiar estado a "cancelada"
-# ↓
-# Guardar JSON
-# ↓
-# Mostrar confirmación
 
 def cancelar_adopcion():
     
