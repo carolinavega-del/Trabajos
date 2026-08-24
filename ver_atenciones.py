@@ -26,21 +26,13 @@ def historial_atenciones():
 
         titulo("📋 HISTORIAL DE ATENCIONES")
 
-        console.print(
-            "1. 📄 Ver todas las atenciones"
-        )
+        console.print("1. 📄 Ver todas las atenciones")
 
-        console.print(
-            "2. 🔍 Buscar atención"
-        )
+        console.print("2. 🔍 Buscar atención")
 
-        console.print(
-            "0. 🚪 Volver"
-        )
+        console.print("0. 🚪 Volver")
 
-        opcion = input(
-            "\n👉 Elige una opción: "
-        )
+        opcion = input("\n👉 Elige una opción: ")
 
         match opcion:
 
@@ -66,35 +58,24 @@ def ver_atenciones():
 
     if len(atenciones) == 0:
 
-        advertencia(
-            " No se encuentran atenciones registradas."
-        )
+        advertencia(" No se encuentran atenciones registradas.")
         return
 
     while True:
 
         titulo("📄 LISTADO DE ATENCIONES")
 
-        tabla = Table(
-            box=box.ROUNDED,
+        tabla = Table(box=box.ROUNDED,
             header_style="bold #8A2BE2"
         )
 
-        tabla.add_column(
-            "N° Atención"
-        )
+        tabla.add_column("N° Atención")
 
-        tabla.add_column(
-            "Animal"
-        )
+        tabla.add_column("Animal")
 
-        tabla.add_column(
-            "Tipo"
-        )
+        tabla.add_column("Tipo")
 
-        tabla.add_column(
-            "Fecha"
-        )
+        tabla.add_column("Fecha")
 
         for atencion in atenciones:
 
@@ -107,19 +88,13 @@ def ver_atenciones():
 
         console.print(tabla)
 
-        console.print(
-            "\n 0. Volver"
-        )
+        console.print("\n 0. Volver")
 
-        opcion = input(
-            "\n👉 Ingrese el número de atención: "
-        )
+        opcion = input("\n👉 Ingrese el número de atención: ")
 
         if not opcion.isdigit():
 
-            error(
-                " Debe ingresar un número."
-            )
+            error(" Debe ingresar un número.")
             continue
 
         opcion = int(opcion)
@@ -139,136 +114,77 @@ def ver_atenciones():
 
         if atencion is None:
 
-            error(
-                "No existe una atención con ese número."
-            )
+            error(}"No existe una atención con ese número.")
             continue
 
         titulo("📋 DETALLE DE LA ATENCIÓN")
 
-        detalle = Table(
-            show_header=False,
-            box=box.ROUNDED
-        )
+        detalle = Table(show_header=False, box=box.ROUNDED)
 
-        detalle.add_column(
-            "Campo",
-            style="bold #C77DFF"
-        )
+        detalle.add_column("Campo", style="bold #C77DFF")
 
-        detalle.add_column(
-            "Valor"
-        )
+        detalle.add_column("Valor")
 
-        detalle.add_row(
-            "🔢 Número",
-            str(atencion["Numero"])
-        )
+        detalle.add_row("🔢 Número", str(atencion["Numero"]))
 
-        detalle.add_row(
-            "🆔 ID Animal",
-            str(atencion["ID Animal"])
-        )
+        detalle.add_row("🆔 ID Animal", str(atencion["ID Animal"]))
 
-        detalle.add_row(
-            "🐾 Nombre",
-            atencion["Nombre"]
-        )
+        detalle.add_row("🐾 Nombre", atencion["Nombre"])
 
-        detalle.add_row(
-            "📅 Fecha",
-            atencion["Fecha"]
-        )
+        detalle.add_row("📅 Fecha", atencion["Fecha"])
 
-        detalle.add_row(
-            "🩺 Tipo",
-            atencion["Tipo de atencion"]
-        )
+        detalle.add_row( "🩺 Tipo", atencion["Tipo de atencion"])
 
-        detalle.add_row(
-            "📝 Observaciones",
-            atencion["Observaciones"]
-        )
+        detalle.add_row("📝 Observaciones", atencion["Observaciones"])
 
-        detalle.add_row(
-            "⏳ Próxima atención",
-            (
-                str(atencion["Proxima atencion"])
+        detalle.add_row("⏳ Próxima atención",
+            (str(atencion["Proxima atencion"])
                 if atencion["Proxima atencion"]
-                else "Sin seguimiento"
-            )
-        )
+                else "Sin seguimiento"))
+        
 
         console.print(detalle)
 
-        console.print(
-            "\n1. ✏️ Modificar observaciones",
-            style="magenta"
-        )
+        console.print("\n1. ✏️ Modificar observaciones", style="magenta")
 
-        console.print(
-            "2. 🗑️ Eliminar registro",
-            style="bold red"
-        )
+        console.print( "2. 🗑️ Eliminar registro", style="bold red")
 
-        console.print(
-            "0. 🔙 Volver al listado"
-        )
+        console.print( "0. 🔙 Volver al listado")
 
-        accion = input(
-            "\n👉 Opción: "
-        )
+        accion = input( "\n👉 Opción: ")
 
         if accion == "1":
 
             while True:
 
-                nueva = input(
-                    "📝 Nueva observación: "
-                ).strip()
+                nueva = input("📝 Nueva observación: ").strip()
 
                 if nueva != "":
                     break
 
-                error(
-                    " La observación no puede estar vacía."
-                )
+                error(" La observación no puede estar vacía.")
 
             atencion["Observaciones"] = nueva
 
-            guardar_atenciones(
-                atenciones
-            )
+            guardar_atenciones (atenciones)
 
-            exito(
-                " Observación modificada correctamente."
-            )
+            exito(" Observación modificada correctamente.")
 
         elif accion == "2":
 
-            confirmar = input( error(
-                "🗑️ ¿Eliminar atención? (S/N): "
-            )).upper()
+            confirmar = input( error("🗑️ ¿Eliminar atención? (S/N): ")).upper()
 
             if confirmar == "S":
 
-                atenciones.remove(
-                    atencion
-                )
+                atenciones.remove(atencion)
 
-                guardar_atenciones(
-                    atenciones
-                )
+                guardar_atenciones(atenciones)
 
-                exito(
-                    " Atención eliminada correctamente."
-                )
+                exito(" Atención eliminada correctamente.")
 
             else:
 
-                advertencia(
-                    " Eliminación cancelada."
-                )
+                advertencia(" Eliminación cancelada.")
 
         elif accion == "0":
 
@@ -276,6 +192,4 @@ def ver_atenciones():
 
         else:
 
-            error(
-                " Opción inválida."
-            )
+            error(" Opción inválida.")
