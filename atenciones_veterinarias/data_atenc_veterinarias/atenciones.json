@@ -1,0 +1,38 @@
+[
+    {
+        "Numero": 1,
+        "ID Animal": 2,
+        "Nombre": "Shelly",
+        "Fecha": "2026-06-15",
+        "Tipo de atencion": "vacuna",
+        "Observaciones": "vacuna quintuple, completa por el año",
+        "Proxima atencion": null
+    },
+    {
+        "Numero": 2,
+        "ID Animal": 3,
+        "Nombre": "Pipoca",
+        "Fecha": "2026-06-18",
+        "Tipo de atencion": "cirugia",
+        "Observaciones": "C:\\Users\\Yayu\\AppData\\Local\\Programs\\Python\\Python314\\python.exe \"c:/Users/Yayu/Desktop/patitas del litoral/menu_general.py\"",
+        "Proxima atencion": null
+    },
+    {
+        "Numero": 4,
+        "ID Animal": 4,
+        "Nombre": "Rocky",
+        "Fecha": "2026-06-18",
+        "Tipo de atencion": "otro",
+        "Observaciones": "alergia en zona lumbar y patas traseras por pulgas",
+        "Proxima atencion": "28/08/2026"
+    },
+    {
+        "Numero": 5,
+        "ID Animal": 2,
+        "Nombre": "Tito",
+        "Fecha": "2026-06-19",
+        "Tipo de atencion": "vacuna",
+        "Observaciones": "vacuna",
+        "Proxima atencion": "12/12/2026"
+    }
+]

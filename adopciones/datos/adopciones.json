@@ -1,0 +1,103 @@
+[
+     {
+          "id": 1,
+          "id_animal": 6,
+          "id_adoptante": 8,
+          "fecha_adopcion": "21/09/2026",
+          "seguimientos": [],
+          "estado": "cancelada"
+     },
+     {
+          "id": 2,
+          "id_animal": 5,
+          "id_adoptante": 9,
+          "fecha_adopcion": "21/09/2026",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 3,
+          "id_animal": 8,
+          "id_adoptante": 10,
+          "fecha_adopcion": "21/09/2026",
+          "seguimientos": [
+               "lo llevo al veterinario",
+               "desparacitado"
+          ],
+          "estado": "activa"
+     },
+     {
+          "id": 4,
+          "id_animal": 9,
+          "id_adoptante": 11,
+          "fecha_adopcion": "21/09/2026",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 5,
+          "id_animal": 2,
+          "id_adoptante": 3,
+          "fecha_adopcion": "21/09/2026",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 6,
+          "id_animal": 10,
+          "id_adoptante": 20,
+          "fecha_adopcion": "16/06/2026",
+          "seguimientos": [
+               "castrado"
+          ],
+          "estado": "cancelada"
+     },
+     {
+          "id": 7,
+          "id_animal": 20,
+          "id_adoptante": 13,
+          "fecha_adopcion": "16/06/2024",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 8,
+          "id_animal": 24,
+          "id_adoptante": 80,
+          "fecha_adopcion": "20/09/2025",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 9,
+          "id_animal": 80,
+          "id_adoptante": 81,
+          "fecha_adopcion": "20/08/2027",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 10,
+          "id_animal": 90,
+          "id_adoptante": 91,
+          "fecha_adopcion": "24/04/2026",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 11,
+          "id_animal": 1,
+          "id_adoptante": 1,
+          "fecha_adopcion": "21/02/2026",
+          "seguimientos": [],
+          "estado": "activa"
+     },
+     {
+          "id": 12,
+          "id_animal": 2,
+          "id_adoptante": 3,
+          "fecha_adopcion": "12/12/1992",
+          "seguimientos": [],
+          "estado": "activa"
+     }
+]

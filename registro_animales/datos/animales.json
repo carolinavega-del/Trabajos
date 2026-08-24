@@ -1,0 +1,52 @@
+[
+  {
+    "id": 4,
+    "nombre_animal": "Paco",
+    "especie": "Gato",
+    "edad_aproximada": 2,
+    "fecha_ingreso": "2025-12-12",
+    "estado": "en_refugio",
+    "historia": "Rescatado del abandono",
+    "colaborador_rescate": null
+  },
+  {
+    "id": 5,
+    "nombre_animal": "Paco",
+    "especie": "Conejo",
+    "edad_aproximada": 3,
+    "fecha_ingreso": "2026-01-01",
+    "estado": "en_adopcion",
+    "historia": "LO DEJARON EN UNA CAJA",
+    "colaborador_rescate": 3
+  },
+  {
+    "id": 7,
+    "nombre_animal": "Tita",
+    "especie": "Gata",
+    "edad_aproximada": 2,
+    "fecha_ingreso": "2026-03-31",
+    "estado": "adoptado",
+    "historia": "La encontraron en la copa de una arbol",
+    "colaborador_rescate": null
+  },
+  {
+    "id": 8,
+    "nombre_animal": "Picoca",
+    "especie": "Gata",
+    "edad_aproximada": 2,
+    "fecha_ingreso": "2026-03-02",
+    "estado": "adoptado",
+    "historia": "La rescataron de una casa abandonada",
+    "colaborador_rescate": 2
+  },
+  {
+    "id": 9,
+    "nombre_animal": "Toto",
+    "especie": "Perro",
+    "edad_aproximada": 2,
+    "fecha_ingreso": "2026-02-12",
+    "estado": "adoptado",
+    "historia": "Lo dejaron en la puerta del refugio",
+    "colaborador_rescate": 3
+  }
+]
