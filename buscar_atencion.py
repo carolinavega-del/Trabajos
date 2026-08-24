@@ -4,11 +4,7 @@ from rich.console import Console
 from rich.table import Table
 from rich import box
 
-from atenciones_veterinarias.ui import (
-    titulo,
-    error,
-    advertencia
-)
+from atenciones_veterinarias.ui import (titulo, error, advertencia)
 
 console = Console(highlight=False)
 
@@ -17,59 +13,30 @@ def mostrar_atencion(atencion):
 
     titulo("📋 DETALLE DE LA ATENCIÓN")
 
-    tabla = Table(
-        show_header=False,
-        box=box.ROUNDED
-    )
+    tabla = Table(show_header=False, box=box.ROUNDED)
 
-    tabla.add_column(
-        "Campo",
-        style="bold #C77DFF"
-    )
+    tabla.add_column("Campo",style="bold #C77DFF")
 
-    tabla.add_column(
-        "Valor"
-    )
+    tabla.add_column("Valor")
 
-    tabla.add_row(
-        "🔢 Número",
-        str(atencion["Numero"])
-    )
+    tabla.add_row("🔢 Número", str(atencion["Numero"])    )
 
-    tabla.add_row(
-        "🆔 ID Animal",
-        str(atencion["ID Animal"])
-    )
+    tabla.add_row("🆔 ID Animal", str(atencion["ID Animal"]))
 
-    tabla.add_row(
-        "🐾 Nombre",
-        atencion["Nombre"]
-    )
+    tabla.add_row("🐾 Nombre", atencion["Nombre"])
 
-    tabla.add_row(
-        "📅 Fecha",
-        atencion["Fecha"]
-    )
+    tabla.add_row( "📅 Fecha", atencion["Fecha"])
 
-    tabla.add_row(
-        "🩺 Tipo",
-        atencion["Tipo de atencion"]
-    )
+    tabla.add_row("🩺 Tipo", atencion["Tipo de atencion"])
 
-    tabla.add_row(
-        "📝 Observaciones",
-        atencion["Observaciones"]
-    )
+    tabla.add_row("📝 Observaciones", atencion["Observaciones"])
 
 
 
-    tabla.add_row(
-        "⏳ Próxima atención",
-        (
-            str(atencion["Proxima atencion"]) 
+    tabla.add_row("⏳ Próxima atención",
+        (str(atencion["Proxima atencion"]) 
             if atencion["Proxima atencion"]
-            else "Sin seguimiento"
-        )
+            else "Sin seguimiento")
     )
 
     console.print(tabla)
@@ -81,17 +48,12 @@ def filtrar_por_id():
 
     if len(atenciones) == 0:
 
-        advertencia(
-            " No hay atenciones registradas."
-        )
+        advertencia(" No hay atenciones registradas.")
         return
 
     while True:
 
-        console.print(
-            "\n🆔 Ingrese el ID del animal:",
-            end=" "
-        )
+        console.print("\n🆔 Ingrese el ID del animal:", end=" ")
 
         id_animal = input()
 
@@ -100,9 +62,7 @@ def filtrar_por_id():
             id_animal = int(id_animal)
             break
 
-        error(
-            " Debe ingresar un número."
-        )
+        error(" Debe ingresar un número.")
 
     encontrado = False
 
@@ -115,9 +75,7 @@ def filtrar_por_id():
 
     if not encontrado:
 
-        advertencia(
-            " No se encontraron atenciones para ese animal."
-        )
+        advertencia(" No se encontraron atenciones para ese animal.")
 
 
 def filtrar_por_nombre():
@@ -126,26 +84,19 @@ def filtrar_por_nombre():
 
     if len(atenciones) == 0:
 
-        advertencia(
-            " No hay atenciones registradas."
-        )
+        advertencia(" No hay atenciones registradas.")
         return
 
     while True:
 
-        console.print(
-            "\n🐾 Ingrese el nombre del animal:",
-            end=" "
-        )
+        console.print("\n🐾 Ingrese el nombre del animal:",end=" ")
 
         nombre = input().strip()
 
         if nombre != "":
             break
 
-        error(
-            " Debe ingresar un nombre."
-        )
+        error(" Debe ingresar un nombre.")
 
     encontrado = False
 
@@ -158,9 +109,7 @@ def filtrar_por_nombre():
 
     if not encontrado:
 
-        advertencia(
-            " No se encontraron atenciones para ese animal."
-        )
+        advertencia(" No se encontraron atenciones para ese animal.")
 
 
 def filtrar_por_tipo():
@@ -169,9 +118,7 @@ def filtrar_por_tipo():
 
     if len(atenciones) == 0:
 
-        advertencia(
-            " No hay atenciones registradas."
-        )
+        advertencia(" No hay atenciones registradas.")
         return
 
     tipos_validos = [
@@ -184,11 +131,7 @@ def filtrar_por_tipo():
 
     while True:
 
-        console.print(
-            "\n🩺 Ingrese el tipo de atención:",
-            style="bold #C77DFF",
-            end=" "
-        )
+        console.print("\n🩺 Ingrese el tipo de atención:", style="bold #C77DFF", end=" ")
 
         tipo = input().lower().strip()
 
@@ -220,9 +163,7 @@ def filtrar_por_tipo():
         if tipo in tipos_validos:
             break
 
-        error(
-            " Tipo inválido."
-        )
+        error(" Tipo inválido.")
 
     encontrado = False
 
@@ -235,9 +176,7 @@ def filtrar_por_tipo():
 
     if not encontrado:
 
-        advertencia(
-            " No se encontraron atenciones de ese tipo."
-        )
+        advertencia(" No se encontraron atenciones de ese tipo.")
 
 
 def menu_buscar_atenciones():
@@ -246,25 +185,15 @@ def menu_buscar_atenciones():
 
         titulo("🔍 BUSCAR ATENCIONES")
 
-        console.print(
-            "1. 🆔 Filtrar por ID de animal"
-        )
+        console.print("1. 🆔 Filtrar por ID de animal")
 
-        console.print(
-            "2. 🐾 Filtrar por nombre"
-        )
+        console.print("2. 🐾 Filtrar por nombre")
 
-        console.print(
-            "3. 🩺 Filtrar por tipo"
-        )
+        console.print("3. 🩺 Filtrar por tipo")
 
-        console.print(
-            "0. 🚪 Volver"
-        )
+        console.print("0. 🚪 Volver")
 
-        opcion = input(
-            "\n👉 Elige una opción: "
-        )
+        opcion = input("\n👉 Elige una opción: ")
 
         match opcion:
 
